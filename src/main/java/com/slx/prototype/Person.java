@@ -11,7 +11,6 @@ public class Person
         this.lastName = lastName;
     }
 
-
     /*** ACCESSORS ***/
 
     public String getName()
