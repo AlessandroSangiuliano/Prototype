@@ -1,5 +1,7 @@
 package com.slx.prototype;
 
+import com.slx.prototype.enums.HoursDefinition;
+
 import java.time.LocalTime;
 
 
@@ -8,10 +10,11 @@ public class Hour
     LocalTime begins;
     LocalTime ends;
 
-    public Hour(LocalTime hBegins, LocalTime hEnds)
+    public Hour(HoursDefinition hour)
     {
-        this.begins = hBegins;
-        this.ends = hEnds;
+        String[] splits = hour.value.split("-");
+        this.begins = LocalTime.parse(splits[0].strip());
+        this.ends = LocalTime.parse(splits[1].strip());;
     }
 
     /*** ACCESSORS ***/
